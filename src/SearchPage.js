@@ -1,0 +1,70 @@
+import React from 'react';
+import TuneIcon from '@mui/icons-material/Tune';
+import  ChannelRow from './ChannelRow'
+import VideoRow from './VideoRow';
+
+
+import "./SearchPage.css";
+import "./ChannelRow.css";
+
+
+function SearchPage() {
+  return (
+    <div className='searchPage'>
+        <div className='searchPage__filter'>
+           <TuneIcon></TuneIcon>
+           <h2>FILTER</h2>
+        </div>
+        <hr></hr>
+        <ChannelRow 
+        image="data:image/jpeg;base64,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"
+        channel="clever programmer"
+        verified
+        subs="668k"
+        noOfVideos={382}
+        description=" you can find awesome programming lessons here!"
+        ></ChannelRow>
+        <hr></hr>
+
+        <VideoRow
+        title="Let's Build a YouTube Clone with REACT JS for beginners"
+        views=" 1.4M"
+        subs="659k"
+        description="do you want to a free training" 
+        timestamp="59 seconds ago"
+        channel="programmer"
+        image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSL-jNj9khEapmqZM5B_klfia1dh5ygiRl26Q&usqp=CAU"
+        ></VideoRow>
+        <VideoRow
+        title="Let's Build a YouTube Clone with REACT JS for beginners"
+        views=" 1.4M"
+        subs="659k"
+        description="do you want to a free training" 
+        timestamp="59 seconds ago"
+        channel="programmer"
+        image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGa1XbG-J1KHJ9fu3Vjhncm3y1vqNbs6uVbVeVOtgjdxpXmF9gfnpywWtnOA-8NcbzejQ&usqp=CAU"
+        ></VideoRow>
+        <VideoRow
+        title="Let's Build a YouTube Clone with REACT JS for beginners"
+        views=" 1.4M"
+        subs="659k"
+        description="do you want to a free training" 
+        timestamp="59 seconds ago"
+        channel="programmer"
+        image="https://img.freepik.com/free-vector/programmer-working-flat-style_52683-15040.jpg?w=2000"
+        ></VideoRow>
+        <VideoRow
+        title="Let's Build a YouTube Clone with REACT JS for beginners"
+        views=" 1.4M"
+        subs="659k"
+        description="do you want to a free training" 
+        timestamp="59 seconds ago"
+        channel="programmer"
+        image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdGIzbBg5Yc4uy-dQ2mfxi5eTNwdsl0fpoAhRNdgp8lFPgFeQi4t_IzIR7G1wmUufVb3Y&usqp=CAU"
+        ></VideoRow>
+
+    </div>
+  );
+}
+
+export default SearchPage
